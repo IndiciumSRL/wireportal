@@ -43,10 +43,7 @@ Ext.define('Wirephone.controller.Configuration.Web.groups', {
         form.down('button[action=edit]').enable();
         form.down('button[action=delete]').enable();
         form.down('grid[itemId=users]').reconfigure(records[0].users());
-        var s = records[0].users();
-        s.load(function(records, operation, success) {
-            console.log(records);
-        });
+        records[0].users().load();
     },
 
     editRecord: function() {

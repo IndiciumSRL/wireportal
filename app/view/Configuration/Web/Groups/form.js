@@ -40,7 +40,7 @@ Ext.define('Wirephone.view.Configuration.Web.Groups.form', {
         },{
             xtype: 'grid',
             itemId: 'users',
-            store: Ext.create('Wirephone.store.Configuration.Web.groups', {}),
+            store: Ext.create('Wirephone.store.Configuration.Web.groups', {autoLoad: false}),
             columns: [
                 { text: 'Username', dataIndex: 'username', flex: 1},
                 { text: 'Full Name', dataIndex: 'fullname', flex: 2}
