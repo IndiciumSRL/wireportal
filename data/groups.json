@@ -1,0 +1,11 @@
+{success: true,
+data: [{
+		'id': 0,
+	    'name': 'Users',
+	    'note': 'This is a test group.'
+	},{
+		'id': 1,
+		'name': 'Users2',
+		'note': 'This is a test group2.'
+	}]
+}

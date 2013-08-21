@@ -7,10 +7,11 @@ Ext.define('Wirephone.controller.Configuration.Web.groups', {
     extend: 'Ext.app.Controller',
     requires: [
         'Ext.window.MessageBox',
-        'Wirephone.view.Configuration.Web.Groups.groups'
     ],
+    models: ['Wirephone.model.Configuration.Web.users'],
+    views: ['Wirephone.view.Configuration.Web.Groups.groups'],
     refs: [{
-        selector: 'container[itemId=mainContainer] grid',
+        selector: 'container[itemId=mainContainer] webgroupgrid',
         ref: 'grid'
     },{
         selector: 'container[itemId=mainContainer] form',
@@ -19,7 +20,7 @@ Ext.define('Wirephone.controller.Configuration.Web.groups', {
     init: function() {
         var me = this;
         me.control({
-            'container[itemId=mainContainer] grid': {
+            'container[itemId=mainContainer] webgroupgrid': {
                 selectionchange: me.selectionchange
             },
             'container[itemId=mainContainer] button[action=edit]': {
@@ -41,6 +42,11 @@ Ext.define('Wirephone.controller.Configuration.Web.groups', {
         form.down('button[action=save]').hide();
         form.down('button[action=edit]').enable();
         form.down('button[action=delete]').enable();
+        form.down('grid[itemId=users]').reconfigure(records[0].users());
+        var s = records[0].users();
+        s.load(function(records, operation, success) {
+            console.log(records);
+        });
     },
 
     editRecord: function() {

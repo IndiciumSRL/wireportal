@@ -1,0 +1,6 @@
+{
+	success: true,
+	data: [
+		{'username': 'jmesquita', 'fullname': 'João Mesquita', 'group_id': 0}
+	]
+}

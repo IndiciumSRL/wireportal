@@ -37,6 +37,15 @@ Ext.define('Wirephone.view.Configuration.Web.Groups.form', {
                 xtype: 'textareafield',
                 allowBlank: true
             }]
+        },{
+            xtype: 'grid',
+            itemId: 'users',
+            store: Ext.create('Wirephone.store.Configuration.Web.groups', {}),
+            columns: [
+                { text: 'Username', dataIndex: 'username', flex: 1},
+                { text: 'Full Name', dataIndex: 'fullname', flex: 2}
+            ],
+            title: 'Users'
         }];
         me.tbar = {
             items: ['->', {
