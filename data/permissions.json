@@ -3,5 +3,11 @@
 	data : [{
 		name: 'config',
 		action: 'read'
+		},{
+		name: 'config.web.groups',
+		action: 'read'
+		},{
+		name: 'config.web.groups',
+		action: 'create'
 		}]
 }

@@ -8,7 +8,6 @@ Ext.define('Wirephone.controller.Main', {
         selector: 'container[itemId=mainContainer]'
     }],
     init: function(){
-        console.log('Main controller has been loaded.');
         var me = this;
         me.control({
             'button[itemId=logout]': { click: me.logout },

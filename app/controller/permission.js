@@ -12,7 +12,6 @@ Ext.define('Wirephone.controller.permission', {
     	var permissions = me.getWirephoneStorePermissionsStore();
         Ext.Msg.wait('Loading permissions...');
     	permissions.load(function(){
-        	console.log('Store is now loaded.');
             Ext.create('Wirephone.view.Viewport', {});
             Ext.Msg.hide();
     	});
@@ -21,18 +20,19 @@ Ext.define('Wirephone.controller.permission', {
     hasPerm: function(context, action) {
         var me = this;
         var pStore = me.getWirephoneStorePermissionsStore();
+        var result = false;
         
-        Ext.log('Being requested for context '+context+' action '+action);
-        
-        var records = pStore.filter([
-            {property: 'name', value: context},
-            {property: 'action', value: action},
+        pStore.filter([
+            {property: 'name', value: context, exactMatch: true},
+            {property: 'action', value: action, exactMatch: true},
         ]);
-        pStore.clearFilter(true);
-        if (records == null) {
-            return false;
+        
+        if (pStore.getCount() == 0) {
+            result = false;
         } else {
-            return true;
+            result = true;
         }
+        pStore.clearFilter(true);
+        return result;
     }
 });
