@@ -16,10 +16,10 @@ Ext.application({
     name: 'Wirephone',
 
     extend: 'Wirephone.Application',
-    controllers: ['Wirephone.controller.permission'],
+    controllers: ['Wirephone.controller.permission', 'Wirephone.controller.Main'],
 
     launch: function() {
         Ext.getBody().unmask();
     },
-    autoCreateViewport: true
+    autoCreateViewport: false
 });

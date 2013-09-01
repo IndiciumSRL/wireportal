@@ -5,10 +5,17 @@
  */
 Ext.define('Wirephone.view.main_sidebar.TelephonyConfig', {
     extend: 'Ext.tree.Panel',
-    requires: [],
+    requires: ['Wirephone.plugin.Permission'],
     alias: 'widget.wirephone.main_sidebar.telephonyconfig',
     title: 'Telephony Configuration',
     rootVisible: false,
+    plugins: [
+        {
+            ptype: 'wirephone.permission',
+            context: 'config',
+            action: 'read'
+        }
+    ],
     root: {
         text: 'Root',
         expanded: true,

@@ -12,6 +12,7 @@ Ext.define('Wirephone.view.Configuration.Web.Groups.form', {
     defaultType: 'textfield',
     title: 'Group form',
     alias: 'widget.webgroupform',
+    autoScroll: true,
     layout: 'anchor',
     defaults: {
         anchor: '100%'
@@ -51,16 +52,37 @@ Ext.define('Wirephone.view.Configuration.Web.Groups.form', {
             items: ['->', {
                 text: 'Add',
                 action: 'add',
-                iconCls: 'icon-add'
+                iconCls: 'icon-add',
+                plugins: [
+                    {
+                        ptype: 'wirephone.permission',
+                        context: 'config.web.groups',
+                        action: 'create'
+                    }
+                ]
             },{
                 text: 'Edit',
                 action: 'edit',
-                disabled: true
+                disabled: true,
+                plugins: [
+                    {
+                        ptype: 'wirephone.permission',
+                        context: 'config.web.groups',
+                        action: 'update'
+                    }
+                ]
             },{
                 text: 'Delete',
                 action: 'delete',
                 disabled: true,
-                iconCls: 'icon-delete'
+                iconCls: 'icon-delete',
+                plugins: [
+                    {
+                        ptype: 'wirephone.permission',
+                        context: 'config.web.groups',
+                        action: 'delete'
+                    }
+                ]
             }]
         };
         me.buttons = [{
