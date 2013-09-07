@@ -9,6 +9,7 @@ Ext.define('Wirephone.view.main_sidebar.TelephonyConfig', {
     alias: 'widget.wirephone.main_sidebar.telephonyconfig',
     title: 'Telephony Configuration',
     rootVisible: false,
+    useArrows: true,
     plugins: [
         {
             ptype: 'wirephone.permission',

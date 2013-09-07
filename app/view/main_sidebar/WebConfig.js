@@ -8,6 +8,7 @@ Ext.define('Wirephone.view.main_sidebar.WebConfig', {
     requires: [],
     alias: 'widget.wirephone.main_sidebar.webconfig',
     title: 'Web Configuration',
+    useArrows: true,
     rootVisible: false,
     root: {
         expanded: true,
